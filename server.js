@@ -5,7 +5,6 @@ const path = require('path');
 const fs = require('fs');
 var uniqid = require('uniqid');
 const outputPath = path.join("./Develop/db", "db.json")
-console.log(outputPath);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -27,9 +26,12 @@ app.get("/api/notes", (req, res) => {
 )});
 
 app.post("/api/notes", (req, res) => {
-    const newNote = req.body;
+    let newNote = {
+        title: req.body.title,
+        text: req.body.text,
+        id: uniqid()
+    };
     console.log(newNote);
-    console.log(notes);
 
     notes.push(newNote);
     res.json(newNote);
@@ -38,4 +40,13 @@ app.post("/api/notes", (req, res) => {
     if (err) console.log('error', err)});
 });
 
-app.listen(PORT, () => console.log(`Example app listening on port: ${PORT}!`))
+app.delete("/api/notes/:id", (req, res) => {
+    const remove = req.params.id;
+    notes.pop(remove);
+    res.json(notes);
+
+    fs.writeFile(outputPath, JSON.stringify(notes), function(err, result) {
+    if (err) console.log('error', err)})
+});
+
+app.listen(PORT, () => console.log(`Example app listening on port: ${PORT}`))
