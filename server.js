@@ -31,7 +31,6 @@ app.post("/api/notes", (req, res) => {
         text: req.body.text,
         id: uniqid()
     };
-    console.log(newNote);
 
     notes.push(newNote);
     res.json(newNote);
@@ -42,11 +41,15 @@ app.post("/api/notes", (req, res) => {
 
 app.delete("/api/notes/:id", (req, res) => {
     const remove = req.params.id;
-    notes.pop(remove);
+    for (var i=0; i<notes.length; i++){
+        if (notes[i].id === remove) {
+            notes.splice(i, 1);
+        };
+    };
     res.json(notes);
 
     fs.writeFile(outputPath, JSON.stringify(notes), function(err, result) {
     if (err) console.log('error', err)})
 });
 
-app.listen(PORT, () => console.log(`Example app listening on port: ${PORT}`))
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
