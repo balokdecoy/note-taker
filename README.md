@@ -6,7 +6,9 @@
 
   - [Description](#description)
 
-  - [Installation](#installation)
+  - [Deployed Application](#deployed)
+
+  - [Screenshots](#screenshots)
 
   - [Usage](#usage)
 
@@ -22,7 +24,7 @@
 
   A note-taking application hosted on Heroku
 
-  ## Deployed Application
+  ## Deployed
 
  https://note-taker-balokdecoy.herokuapp.com/
 
