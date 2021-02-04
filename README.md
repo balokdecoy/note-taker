@@ -18,6 +18,8 @@
 
   - [Questions](#questions)
 
+  - [Acknowledgments](#acknowledgments)
+
   - [Licenses](#licenses)
 
   ## Description
@@ -53,6 +55,15 @@
   Visit my Github profile at http://www.github.com/balokdecoy.
 
   If you have questions, you can reach me via email at johnniesimpson88@gmail.com.
+
+  ## Acknowledgments
+
+  Thanks to Amir Ashtiany, Young Ji Kim, Frankie Rosado, and Rachel Wanke for their feedback, support, and brainstorming. Visit their Github pages here:
+
+  1. Amir Ashtiany - https://github.com/Alexfit4
+  2. Young Ji Kim - https://github.com/youjmi
+  3. Frankie Rosado - https://github.com/Franciscorosado09
+  4. Rachel Wanke: - https://github.com/rwanke14 
 
   ## Licenses
  Licensed under [GPL v3](https://www.gnu.org/licenses/gpl-3.0)
